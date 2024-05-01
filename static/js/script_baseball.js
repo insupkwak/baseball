@@ -188,7 +188,7 @@ function compareNumbers(guess, target) {
             counts[guess[i]]--; // 사용한 볼은 카운트 감소
         }
     }
-
+    alert (`${strikes} 스트라이크, ${balls} 볼`);
     return `${strikes} 스트라이크, ${balls} 볼`;
 }
 

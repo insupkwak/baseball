@@ -152,6 +152,7 @@ function generateRandomNumber(length) {
         return generateRandomNumber(length);
     }
 
+    console.log(number)
 
     return number;
 }
@@ -297,7 +298,21 @@ function showRecordsTable(records) {
     // 데이터를 시도 횟수에 따라 정렬
     records.sort((a, b) => a.attempts - b.attempts);
 
+    // 동점 처리를 위한 변수들
+    let lastAttempts = null;
+    let rank = 0;
+    let skip = 0;
+
     records.forEach((record, index) => {
+        if (lastAttempts !== record.attempts) {
+            // 시도 횟수가 이전 레코드와 다르면 순위 업데이트
+            rank += 1 + skip;
+            skip = 0; // 스킵 카운트 리셋
+        } else {
+            // 동점자의 경우 스킵 카운트 증가
+            skip++;
+        }
+
         let row = tableBody.insertRow();
 
         let cellRanking = row.insertCell(0);
@@ -305,10 +320,13 @@ function showRecordsTable(records) {
         let cellUsername = row.insertCell(2);
         let cellDate = row.insertCell(3);
 
-        cellRanking.textContent = index + 1; // 순위 설정
+        cellRanking.textContent = rank; // 순위 설정
         cellAttempts.textContent = record.attempts;
         cellUsername.textContent = record.username;
         cellDate.textContent = new Date(record.timestamp).toLocaleString();
+
+        // 다음 루프를 위해 이전 시도 횟수 업데이트
+        lastAttempts = record.attempts;
     });
 
     tableContainer.style.display = 'block'; // 테이블 표시

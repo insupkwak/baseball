@@ -152,7 +152,7 @@ function generateRandomNumber(length) {
         return generateRandomNumber(length);
     }
 
-    console.log(number)
+ 
 
     return number;
 }

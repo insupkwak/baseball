@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     max-width: 400px;
-    background-color: #d2d1d1;
+    background-color: #afafaf;
     margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
     padding: 0;
 }
@@ -41,7 +41,7 @@ form {
 
 input {
     width: 100%; /* 모바일 디바이스에서 적절하게 보이도록 조정 */
-    max-width: 320px; /* 기존의 고정 폭 대신 최대 폭 설정 */
+    max-width: 300px; /* 기존의 고정 폭 대신 최대 폭 설정 */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -51,22 +51,58 @@ input {
 button {
     width: 160px;
     padding: 10px;
-    background-color: #000000;
+    background-color: #0004ff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.button1 {
-    width: 80px;
-  
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
+    .log-button {
+        width: 160px;
+        padding: 10px;
+        background-color: #17694a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* 버튼 스타일 */
+    .start-button {
+        width: 160px;
+        padding: 10px;
+        background-color: #17694a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* 전송 버튼 스타일 */
+    .submit-button {
+        width: 160px;
+        padding: 10px;
+        background-color: #273bad;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* 버튼 컨테이너 스타일 */
+    .end-button {
+        width: 160px;
+        padding: 10px;
+        background-color: #a83535;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
 
       /* 선택 리스트 스타일 */
       select {

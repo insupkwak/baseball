@@ -12,7 +12,6 @@ let isTableVisible = false;
 
 // 숨기기와 표시 초기화
 digitForm.style.display = 'block';
-endGameForm.style.display = 'none';
 inputForm.style.display = 'none';
 
 
@@ -37,7 +36,6 @@ startGameButton.addEventListener('click', function(event) {
       
 
     digitForm.style.display = 'none';
-    endGameForm.style.display = 'block';
     inputForm.style.display = 'block';
 
 
@@ -56,7 +54,6 @@ document.addEventListener('click', function(event) {
         endGame()
 
         digitForm.style.display = 'block';
-        endGameForm.style.display = 'none';
         inputForm.style.display = 'none';
 
         // 게임 시작 버튼 활성화
@@ -211,7 +208,6 @@ function resetGameLog() {
 // 게임 종료 함수
 function endGame() {
     digitForm.style.display = 'block';
-    endGameForm.style.display = 'none';
     inputForm.style.display = 'none';
     gameDescription.textContent = '게임 종료';
     startGameButton.disabled = false;

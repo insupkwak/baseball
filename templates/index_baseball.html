@@ -14,7 +14,7 @@
 
     <div class="container">
         <select id="recordDigitsSelect">
-            <option value="3">3자리</option>
+
             <option value="4">4자리</option>
             <option value="5">5자리</option>
             <option value="6">6자리</option>
@@ -23,7 +23,7 @@
             <option value="9">9자리</option>
        
         </select>
-        <button id="checkRecordsButton">기록확인</button>
+        <button id="checkRecordsButton"class="log-button">기록확인</button>
     </div>
 
     <div id="recordsTableContainer" style="display: none;">
@@ -44,7 +44,7 @@
 
     <form id="digitForm">
         <select id="digits" name="digits">
-            <option value="3">3자리</option>
+  
             <option value="4">4자리</option>
             <option value="5">5자리</option>
             <option value="6">6자리</option>
@@ -54,17 +54,15 @@
 
         </select>
         <!-- 게임 시작 버튼 -->
-        <button type="button" id="startGameButton">게임 시작</button>
+        <button type="button" id="startGameButton" class="start-button">게임 시작</button>
     </form>
 
-    <form id="endGameForm">
-        <button type="button" id="endButton">게임종료</button>
-    </form>
 
     <form id="inputForm">
         <input id="data" name="data" placeholder="숫자를 입력하세요">
         <br>
-        <button type="submit">전송</button>
+        <button type="submit" class="submit-button">전송</button>
+        <button type="button" id="endButton" class="end-button">게임종료</button>
     </form>
 
 

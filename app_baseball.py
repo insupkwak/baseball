@@ -7,7 +7,7 @@ data_file = 'attempts.json'
 discord_webhook = "https://discord.com/api/webhooks/1176157989506404512/MPNnjvAJdhmsY37AGexHLQDwgUnekpRSRQKTWHC8_3PMQwrq1u0Z_wB_bR_b1BZHqnSx"
 
 
-
+print("server start")
 
 def load_data():
     try:

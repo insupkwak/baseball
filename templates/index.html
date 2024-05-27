@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="search-query" placeholder="Enter search query">
+            <button id="search-button">검색</button>
+            <button id="exclusive-button">단독</button>
+            <button id="news-button">속보</button>
+        </div>
+        <div class="results-container" style="display: none;" id="results-container">
+            <div class="results" id="google-results">
+                <h2>Google</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>News</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="google-results-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="results" id="daum-results">
+                <h2>Daum</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>News</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daum-results-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="results" id="naver-results">
+                <h2>NAVER</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>News</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="naver-results-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="banner-container" style="display: none;">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({"id":778650,"template":"carousel","trackingCode":"AF6082287","width":"400","height":"140","tsource":""});
+        </script>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

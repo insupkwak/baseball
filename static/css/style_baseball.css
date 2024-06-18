@@ -207,7 +207,7 @@ select:focus {
     }
     
     #recordsTable th, #recordsTable td {
-        font-size: 14px; /* 폰트 크기 조정 */
+        font-size: 12px; /* 폰트 크기 조정 */
     }
     
 

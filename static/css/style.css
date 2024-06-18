@@ -1,129 +1,197 @@
 body {
-    background-image: url('/static/images/space.jpg');
-    background-size: cover; /* 배경 이미지가 창에 꽉 차도록 설정 */
-
     font-family: Arial, sans-serif;
-    margin: 0;
+    max-width: 400px;
+    background-color: #d2d1d1;
+    margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-}
-
-.container {    
-    width: 95%;
-    max-width: 1200px;
-    margin-top: 50px;
-}
-
-.search-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.search-box input {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-.search-box button {
-    padding: 10px;
-    width: 20%;
-    min-width: 80px; /* 버튼의 최소 너비를 설정 */
-    font-size: 16px;
-    margin-left: 5px;
-    border: none;
-    background-color: #000000; /* 2024년 트렌드 컬러 */
-    color: white;
-    font-weight: bold; /* 글자를 굵게 설정 */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s; /* 배경 색상에 대한 애니메이션 효과 */
-    cursor: pointer;
-    white-space: nowrap; /* 글자가 버튼 밖으로 나가지 않도록 설정 */
-    text-align: center; /* 텍스트를 중앙 정렬 */
 }
 
 
-.search-box button:hover {
-    background-color: #707070; /* 마우스 호버 시 색상 변경 */
+.container {
+    background-color: #fff;
+    padding: 20px;  
+    max-width: 400px;
+    margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
+    padding: 20px;
+    text-align: center; /* 폼 안의 요소들을 가운데 정렬합니다 */
+
+  
 }
 
-.results-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.results {
-    background: #f9f9f9; /* 새로운 배경색상 적용 */
-    margin: 10px 0;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* 모서리를 라운드 처리 */
-}
-.results h2 {
-    margin-top: 0;
-}
-
-.results table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.results th, .results td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff; /* 각 셀의 배경색상을 흰색으로 설정 */
-}
-.results th {
+h1 {
     background-color: #000000;
-    color: white;
+    color: #ffffff; /* 텍스트 색상을 밝은 핑크로 변경 */
+    padding: 20px;
+    margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
+    text-align: center; /* 폼 안의 요소들을 가운데 정렬합니다 */
+    margin-top: 0px ;
+    height: 100px;
+    line-height: 100px; /* 높이에 맞춰 텍스트 수직 정렬 */
 }
 
-.results td {
-    width: 20%;
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
+    text-align: center; /* 폼 안의 요소들을 가운데 정렬합니다 */
+ 
 }
 
-.results td:nth-child(2) {
-    width: 70%;
+
+input {
+    width: 100%; /* 모바일 디바이스에서 적절하게 보이도록 조정 */
+    max-width: 320px; /* 기존의 고정 폭 대신 최대 폭 설정 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.results td:nth-child(3) {
-    width: 10%;
+button {
+    width: 160px;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.results a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.button1 {
+    width: 80px;
+  
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.results td:nth-child(2):hover {
-    background-color: rgba(0, 0, 0, 0.1); /* 호버 시 배경색 변경 */
-    transition: background-color 0.3s ease; /* 애니메이션 효과 추가 */
-}
 
-/* Google News 색상 */
-.google-color-1 { color: #4285F4; } /* 파란색 */
-.google-color-2 { color: #EA4335; } /* 빨간색 */
-.google-color-3 { color: #FBBC05; } /* 오렌지 */
-.google-color-4 { color: #4285F4; } /* 파란색 */
-.google-color-5 { color: #34A853; } /* 그린 */
-.google-color-6 { color: #EA4335; } /* 빨간색 */
+      /* 선택 리스트 스타일 */
+      select {
+        padding: 8px 12px; /* 내부 여백 */
+        width: 150px;
+        font-size: 16px; /* 글꼴 크기 */
+        border: 1px solid #ccc; /* 테두리 */
+        border-radius: 5px; /* 테두리 반경 */
+        appearance: none; /* 기본 스타일 숨기기 */
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>'); /* 드롭다운 아이콘 */
+        background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
+        background-position: right 8px center; /* 아이콘 위치 조정 */
+        background-size: 20px; /* 아이콘 크기 */
+        -webkit-appearance: none; /* iOS Safari 지원 */
+        -moz-appearance: none; /* Firefox 지원 */
+        appearance: none; /* 표준 지원 */
+    }
 
-/* Daum News 색상 */
-.daum-color-1 { color: #0066FF; } /* 파란색 */
-.daum-color-2 { color: #34A853; } /* 그린 */
-.daum-color-3 { color: #FBBC05; } /* 오렌지 */
-.daum-color-4 { color: #EA4335; } /* 빨간색 */
+    /* 선택 리스트 호버 효과 */
+    select:hover {
+        border-color: #999; /* 호버 시 테두리 색상 변경 */
+    }
 
-/* Naver News 색상 */
-.naver-color { color: #2DB400; } /* 네이버 그린 */
+    /* 선택 리스트 포커스 효과 */
+    select:focus {
+        outline: none; /* 포커스 효과 제거 */
+        border-color: #555; /* 포커스 시 테두리 색상 변경 */
+    }
+
+
+    #gameLog {
+        width: 400px;
+        margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
+        border-collapse: collapse; /* 셀 경계를 겹치도록 설정 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+        
+    }
+    
+    #gameLog {
+        width: 400px;
+        margin: auto; /* 상하 여백 추가 및 가운데 정렬 */
+        border-collapse: separate; /* 테두리 겹치지 않도록 설정 */
+        border-spacing: 0; /* 셀 간격 없애기 */
+   
+       
+        overflow: hidden; /* 둥근 테두리를 위한 설정 */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 폰트 변경 */
+    }
+    
+    #gameLog th, #gameLog td {
+        padding: 12px 15px; /* 패딩 조정 */
+        border: none; /* 테두리 없애기 */
+        text-align: center;
+        font-size: 14px; /* 폰트 크기 조정 */
+    }
+    
+    #gameLog th {
+        background-color: #000000; /* 헤더 배경색 변경 */
+        color: white; /* 헤더 텍스트 색상 변경 */
+    }
+    
+    #gameLog tbody tr:nth-child(odd) {
+        background-color: #e6e6e6; /* 홀수 번째 행 배경색 변경 */
+    }
+    
+    #gameLog tbody tr:hover {
+        background-color: #ddd; /* 호버 효과 배경색 변경 */
+        cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    }
+
+
+
+    #recordsTable {
+        width: 400px;
+        margin: auto; /* 상하 여백 추가 및 가운데 정렬 */
+        border-collapse: separate; /* 테두리 겹치지 않도록 설정 */
+        border-spacing: 0; /* 셀 간격 없애기 */
+  
+        
+        overflow: hidden; /* 둥근 테두리를 위한 설정 */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 폰트 변경 */
+    }
+    
+    #recordsTable th, #recordsTable td {
+        padding: 12px 15px; /* 패딩 조정 */
+        border: none; /* 테두리 없애기 */
+        text-align: center;
+        font-size: 14px; /* 폰트 크기 조정 */
+    }
+    
+    #recordsTable th {
+        background-color: #000000; /* 헤더 배경색 변경 */
+        color: white; /* 헤더 텍스트 색상 변경 */
+    }
+    
+    #recordsTable tbody tr:nth-child(odd) {
+        background-color: #e6e6e6; /* 홀수 번째 행 배경색 변경 */
+    }
+    
+    #recordsTable tbody tr:hover {
+        background-color: #ddd; /* 호버 효과 배경색 변경 */
+        cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    }
+
+
+    @media (max-width: 600px) {
+        body, .container {
+            max-width: 100%; /* 전체 화면 너비 사용 */
+            
+            margin: 0px; /* 모바일에서 가로 마진 제거 */
+        }
+    
+        h1, form {
+            padding: 15px; /* 모바일에서는 패딩 감소 */
+            margin: 0px; /* 모바일에서 가로 마진 제거 */
+        }
+    
+        #gameLog, #recordsTable {
+            width: 100%; /* 테이블 너비를 화면 크기에 맞춤 */
+            margin: 0px; /* 모바일에서 가로 마진 제거 */
+        }
+    
+        #gameLog th, #gameLog td, #recordsTable th, #recordsTable td {
+            padding: 8px; /* 모바일에서는 셀 패딩 감소 */
+            font-size: 12px; /* 폰트 크기 감소 */
+            margin: 0px; /* 모바일에서 가로 마진 제거 */
+        }
+    }

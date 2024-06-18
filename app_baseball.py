@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import mysql.connector
 
 app = Flask(__name__)
@@ -34,6 +34,8 @@ def create_table():
 
 create_table()
 
+
+
 @app.route('/')
 def home():
     return render_template('index_baseball.html')
@@ -46,9 +48,16 @@ def record_attempt():
         if not data or not all(key in data for key in ['digits', 'attempts', 'username']):
             return jsonify({'error': 'Missing data'}), 400
 
+        # 현재 시간을 UTC로 가져옴
         now_utc = datetime.utcnow()
-        now_korea = now_utc + timedelta(hours=9)
-        timestamp = now_korea.isoformat()
+        
+        print(now_utc)
+   
+        # 변환된 시간을 DATETIME 형식으로 포맷팅
+        timestamp = now_utc.strftime('%Y-%m-%d %H:%M:%S')
+
+        print(timestamp)
+ 
 
         conn = get_db_connection()
         cursor = conn.cursor()

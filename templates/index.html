@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Search</title>
+    <title>숫자 맞추기 게임</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
 </head>
+
 <body>
+    <h1>숫자 맞추기 게임</h1>
+
     <div class="container">
-        <div class="search-box">
-            <input type="text" id="search-query" placeholder="Enter search query">
-            <button id="search-button">검색</button>
-            <button id="exclusive-button">단독</button>
-            <button id="news-button">속보</button>
-        </div>
-        <div class="results-container" style="display: none;" id="results-container">
-            <div class="results" id="google-results">
-                <h2>Google</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>News</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="google-results-body">
-                    </tbody>
-                </table>
-            </div>
-            <div class="results" id="daum-results">
-                <h2>Daum</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>News</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="daum-results-body">
-                    </tbody>
-                </table>
-            </div>
-            <div class="results" id="naver-results">
-                <h2>NAVER</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>News</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="naver-results-body">
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <select id="recordDigitsSelect">
+            <option value="3">3자리</option>
+            <option value="4">4자리</option>
+            <option value="5">5자리</option>
+            <option value="6">6자리</option>
+            <option value="7">7자리</option>
+            <option value="8">8자리</option>
+            <option value="9">9자리</option>
+            <option value="10">10자리</option>
+            <option value="11">11자리</option>
+            <option value="12">12자리</option>
+            <option value="13">13자리</option>
+            <option value="14">14자리</option>
+            <option value="15">15자리</option>
+        </select>
+        <button id="checkRecordsButton">기록확인</button>
     </div>
 
-    <div id="banner-container" style="display: none;">
-        <script src="https://ads-partners.coupang.com/g.js"></script>
-        <script>
-            new PartnersCoupang.G({"id":778650,"template":"carousel","trackingCode":"AF6082287","width":"400","height":"140","tsource":""});
-        </script>
+    <div id="recordsTableContainer" style="display: none;">
+        <table id="recordsTable">
+            <thead>
+                <tr>
+                    <th>순위</th>
+                    <th>시도</th>
+                    <th>이름</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 데이터는 여기에 동적으로 삽입됩니다 -->
+            </tbody>
+        </table>
     </div>
 
+    <form id="digitForm">
+        <select id="digits" name="digits">
+            <option value="3">3자리</option>
+            <option value="4">4자리</option>
+            <option value="5">5자리</option>
+            <option value="6">6자리</option>
+            <option value="7">7자리</option>
+            <option value="8">8자리</option>
+            <option value="9">9자리</option>
+            <option value="10">10자리</option>
+            <option value="11">11자리</option>
+            <option value="12">12자리</option>
+            <option value="13">13자리</option>
+            <option value="14">14자리</option>
+            <option value="15">15자리</option>
+        </select>
+        <!-- 게임 시작 버튼 -->
+        <button type="button" id="startGameButton">게임 시작</button>
+    </form>
+
+    <form id="endGameForm">
+        <button type="button" id="endButton">게임종료</button>
+    </form>
+
+    <form id="inputForm">
+        <input id="data" name="data" placeholder="숫자를 입력하세요">
+        <br>
+        <button type="submit">전송</button>
+    </form>
+
+
+
+    <table id="gameLog">
+        <thead>
+            <tr>
+                <th>시도</th>
+                <th>입력한 숫자</th>
+                <th>결과</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 여기에 게임 기록이 동적으로 추가됩니다 -->
+        </tbody>
+    </table>
+
+    <div id="response"></div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

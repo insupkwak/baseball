@@ -40,15 +40,15 @@ form {
 
 
 input {
-    width: 100%; /* 모바일 디바이스에서 적절하게 보이도록 조정 */
-    max-width: 300px; /* 기존의 고정 폭 대신 최대 폭 설정 */
+    width: calc(100% - 22px); /* 패딩과 테두리를 고려한 너비 설정 */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    box-sizing: border-box; /* 패딩과 테두리를 요소의 크기에 포함하도록 설정 */
+    font-size: 16px; /* 원하는 폰트 사이즈 설정 */
 }
-
 
 .log-button {
     width: 160px;

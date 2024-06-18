@@ -199,7 +199,7 @@ select:focus {
 
 @media (max-width: 768px) {
     body {
-        font-size: 16px; /* 모바일에서 폰트 크기 증가 */
+        font-size: 14px; /* 모바일에서 폰트 크기 증가 */
     }
 
     input[type="text"], button {

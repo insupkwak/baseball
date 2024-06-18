@@ -47,7 +47,7 @@ input {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     box-sizing: border-box; /* 패딩과 테두리를 요소의 크기에 포함하도록 설정 */
-    font-size: 18px; /* 원하는 폰트 사이즈 설정 */
+    font-size: 16px; /* 원하는 폰트 사이즈 설정 */
 }
 
 .log-button {
@@ -58,7 +58,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* 버튼 스타일 */
@@ -70,7 +70,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* 전송 버튼 스타일 */
@@ -82,7 +82,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* 버튼 컨테이너 스타일 */
@@ -94,7 +94,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
@@ -205,11 +205,11 @@ select:focus {
 
 @media (max-width: 768px) {
     body {
-        font-size: 18px; /* 모바일에서 폰트 크기 증가 */
+        font-size: 16px; /* 모바일에서 폰트 크기 증가 */
     }
 
     input[type="text"], button {
-        font-size: 18px; /* 입력 필드와 버튼 폰트 크기 증가 */
+        font-size: 16px; /* 입력 필드와 버튼 폰트 크기 증가 */
         padding: 12px; /* 버튼 패딩 증가 */
         margin-bottom: 15px;
         border-radius: 8px;

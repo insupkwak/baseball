@@ -23,6 +23,8 @@ startGameButton.addEventListener('click', function(event) {
  
     // 선택된 자리수 가져오기
     let selectedOption = document.getElementById('digits').value;
+    document.getElementById('gameLog').style.display = 'table';
+
 
     // 게임 설명 업데이트
     updateGameDescription(selectedOption);
@@ -37,7 +39,7 @@ startGameButton.addEventListener('click', function(event) {
 
     digitForm.style.display = 'none';
     inputForm.style.display = 'block';
-
+  
 
     // 게임 종료 버튼 추가
     endButton = document.getElementById('endButton');
@@ -52,6 +54,8 @@ document.addEventListener('click', function(event) {
         event.preventDefault();
 
         endGame()
+
+        document.getElementById('gameLog').style.display = 'none';
 
         digitForm.style.display = 'block';
         inputForm.style.display = 'none';

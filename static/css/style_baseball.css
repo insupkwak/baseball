@@ -128,16 +128,10 @@ select:focus {
 }
 
 
-#gameLog {
-    width: 400px;
-    margin: 0 auto; /* 가운데 정렬을 위해 auto로 설정 */
-    border-collapse: collapse; /* 셀 경계를 겹치도록 설정 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-    
-}
 
 #gameLog {
-    width: 400px;
+    width: 100%;
+    display: none;
     margin: auto; /* 상하 여백 추가 및 가운데 정렬 */
     border-collapse: separate; /* 테두리 겹치지 않도록 설정 */
     border-spacing: 0; /* 셀 간격 없애기 */
@@ -171,7 +165,7 @@ select:focus {
 
 
 #recordsTable {
-    width: 400px;
+    width: 100%;
     margin: auto; /* 상하 여백 추가 및 가운데 정렬 */
     border-collapse: separate; /* 테두리 겹치지 않도록 설정 */
     border-spacing: 0; /* 셀 간격 없애기 */

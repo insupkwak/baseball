@@ -199,26 +199,15 @@ select:focus {
 }
 
 
-@media (max-width: 600px) {
-    body, .container {
-        max-width: 100%; /* 전체 화면 너비 사용 */
-    
-        margin: 0px; /* 모바일에서 가로 마진 제거 */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* 모바일에서 폰트 크기 증가 */
     }
 
-    h1, form {
-        
-        margin: 0px; /* 모바일에서 가로 마진 제거 */
-    }
-
-    #gameLog, #recordsTable {
-        width: 100%; /* 테이블 너비를 화면 크기에 맞춤 */
-        margin: 0px; /* 모바일에서 가로 마진 제거 */
-    }
-
-    #gameLog th, #gameLog td, #recordsTable th, #recordsTable td {
-        padding: 8px; /* 모바일에서는 셀 패딩 감소 */
-        font-size: 12px; /* 폰트 크기 감소 */
-        margin: 0px; /* 모바일에서 가로 마진 제거 */
+    input[type="text"], button {
+        font-size: 18px; /* 입력 필드와 버튼 폰트 크기 증가 */
+        padding: 12px; /* 버튼 패딩 증가 */
+        margin-bottom: 15px;
+        border-radius: 8px;
     }
 }

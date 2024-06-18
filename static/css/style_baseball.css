@@ -47,7 +47,7 @@ input {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     box-sizing: border-box; /* 패딩과 테두리를 요소의 크기에 포함하도록 설정 */
-    font-size: 16px; /* 원하는 폰트 사이즈 설정 */
+    font-size: 18px; /* 원하는 폰트 사이즈 설정 */
 }
 
 .log-button {

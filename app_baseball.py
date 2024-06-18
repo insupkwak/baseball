@@ -1,36 +1,38 @@
-import json
 from flask import Flask, request, jsonify, render_template
 from datetime import datetime, timedelta
+import mysql.connector
 
 app = Flask(__name__)
-data_file = 'attempts.json'
-discord_webhook = "https://discord.com/api/webhooks/1176157989506404512/MPNnjvAJdhmsY37AGexHLQDwgUnekpRSRQKTWHC8_3PMQwrq1u0Z_wB_bR_b1BZHqnSx"
 
+# MySQL 데이터베이스 연결 설정
+config = {
+    'user': 'mariadb',
+    'password': '1234',
+    'host': 'svc.sel5.cloudtype.app',
+    'port': 31200,
+    'database': 'mariadb'
+}
 
-print("server start")
+def get_db_connection():
+    return mysql.connector.connect(**config)
 
-def load_data():
-    try:
-        with open(data_file, 'r') as f:
-            data = json.load(f)
-            for attempt in data:
-                attempt['digits'] = str(attempt['digits'])
-            return data
-    except FileNotFoundError:
- 
-        pass
-    except json.JSONDecodeError:
+def create_table():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS attempts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        digits VARCHAR(255),
+        attempts INT,
+        username VARCHAR(255),
+        timestamp DATETIME
+    )
+    """)
+    conn.commit()
+    cursor.close()
+    conn.close()
 
-        pass
-
-def save_data(data):
-    try:
-        with open(data_file, 'w') as f:
-            json.dump(data, f, default=str)
-    except Exception as e:
-         pass
-
-attempts_log = load_data()
+create_table()
 
 @app.route('/')
 def home():
@@ -46,27 +48,38 @@ def record_attempt():
 
         now_utc = datetime.utcnow()
         now_korea = now_utc + timedelta(hours=9)
-        data['timestamp'] = now_korea.isoformat()
+        timestamp = now_korea.isoformat()
 
-        attempts_log.append(data)
-        save_data(attempts_log)
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+        INSERT INTO attempts (digits, attempts, username, timestamp)
+        VALUES (%s, %s, %s, %s)
+        """, (data['digits'], data['attempts'], data['username'], timestamp))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
         return jsonify({'message': 'Data saved successfully', 'data': data}), 201
     except Exception as e:
         print("An error occurred:", e)
-       
         return jsonify({'error': 'An error occurred while processing your request'}), 500
 
 @app.route('/attempts/<int:digits>', methods=['GET'])
 def get_attempts(digits):
     try:
         digits_str = str(digits)
-        attempts_log = load_data()
-        filtered_attempts = [attempt for attempt in attempts_log if attempt['digits'] == digits_str]
-        sorted_attempts = sorted(filtered_attempts, key=lambda x: x['attempts'])
-        return jsonify(sorted_attempts)
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""
+        SELECT * FROM attempts WHERE digits = %s ORDER BY attempts
+        """, (digits_str,))
+        attempts = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return jsonify(attempts)
     except Exception as e:
         print("An error occurred:", e)
-
         return jsonify({'error': 'An error occurred while processing your request'}), 500
 
 if __name__ == '__main__':

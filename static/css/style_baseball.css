@@ -202,6 +202,15 @@ select:focus {
         font-size: 14px; /* 모바일에서 폰트 크기 증가 */
     }
 
+    #gameLog th, #gameLog td {
+        font-size: 12px; /* 폰트 크기 조정 */
+    }
+    
+    #recordsTable th, #recordsTable td {
+        font-size: 14px; /* 폰트 크기 조정 */
+    }
+    
+
     input[type="text"], button {
         font-size: 16px; /* 입력 필드와 버튼 폰트 크기 증가 */
         padding: 12px; /* 버튼 패딩 증가 */

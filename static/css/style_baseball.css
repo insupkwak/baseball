@@ -58,6 +58,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 /* 버튼 스타일 */
@@ -69,6 +70,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 /* 전송 버튼 스타일 */
@@ -80,6 +82,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 /* 버튼 컨테이너 스타일 */
@@ -91,6 +94,7 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 
